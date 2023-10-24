@@ -1,10 +1,10 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import model from '../models';
+import model from '../../models';
 const httpStatus = require("http-status");
 const { validationResult } = require("express-validator");
-const catchAsync = require("../utils/catchasync");
-const BadRequestError = require("../utils/errors/badrequest.error");
+const catchAsync = require("../../utils/catchasync");
+const BadRequestError = require("../../utils/errors/badrequest.error");
 
 const resetPassword = catchAsync (async (req, res) => {
   const errors = validationResult(req);

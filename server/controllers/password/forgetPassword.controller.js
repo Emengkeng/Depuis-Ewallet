@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
-import transporter from '../middlewares/transporter';
-import model from '../models';
-const sendMail = require('../services');
+import transporter from '../../middlewares/transporter';
+import model from '../../models';
+const sendMail = require('../../services');
 
 const forgetPassword = async (req, res) => {
   try {

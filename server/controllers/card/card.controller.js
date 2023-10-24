@@ -1,16 +1,16 @@
 import { json } from 'express';
-import rave from '../config/flutterwave_init';
-import fee from '../config/cardfee';
-import model from '../models';
+import rave from '../../config/flutterwave_init';
+import fee from '../../config/cardfee';
+import model from '../../models';
 import axios from 'axios';
 const { validationResult } = require("express-validator");
 const httpStatus = require("http-status");
-import { createCard } from '../services/creatcard.service';
-import { fundCard } from '../services/fundcard.service';
-import { giftCard, rejectCard } from '../services/giftcard.service';
-import { findUserByEmail, findUserById, getUserBalance } from '../services/user.service';
-const catchAsync = require("../utils/catchasync");
-const BadRequestError = require("../utils/errors/badrequest.error");
+import { createCard } from '../../services/creatcard.service';
+import { fundCard } from '../../services/fundcard.service';
+import { giftCard, rejectCard } from '../../services/giftcard.service';
+import { findUserByEmail, findUserById, getUserBalance } from '../../services/user.service';
+const catchAsync = require("../../utils/catchasync");
+const BadRequestError = require("../../utils/errors/badrequest.error");
 
 require('dotenv').config();
 

@@ -1,12 +1,12 @@
-const { userService, walletService } = require("../services");
+const { userService, walletService } = require("../../services");
 const httpStatus = require("http-status");
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
-import model from '../models';
+import model from '../../models';
 const jwt = require("jsonwebtoken");
-const jwtConfig = require("../config/jwt");
-const catchAsync = require("../utils/catchasync");
-const UnAuthorizedError = require("../utils/errors/unauthorized.error");
+const jwtConfig = require("../../config/jwt");
+const catchAsync = require("../../utils/catchasync");
+const UnAuthorizedError = require("../../utils/errors/unauthorized.error");
 
 const register = catchAsync(async (req, res) => {
   const errors = validationResult(req);

@@ -1,6 +1,6 @@
-const { transactionService } = require("../services");
+const { transactionService } = require("../../services");
 const httpStatus = require("http-status");
-const catchAsync = require("../utils/catchasync");
+const catchAsync = require("../../utils/catchasync");
 
 const getTransactions = catchAsync(async (req, res) => {
   const transactionData = {

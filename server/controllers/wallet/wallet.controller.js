@@ -1,8 +1,8 @@
-const { walletService } = require("../services");
+const { walletService } = require("../../services");
 const httpStatus = require("http-status");
 const { validationResult } = require("express-validator");
-const catchAsync = require("../utils/catchasync");
-const BadRequestError = require("../utils/errors/badrequest.error");
+const catchAsync = require("../../utils/catchasync");
+const BadRequestError = require("../../utils/errors/badrequest.error");
 
 const setWalletPin = catchAsync(async (req, res) => {
   const errors = validationResult(req);
