@@ -22,12 +22,14 @@ Application is still under developement, new features may be added weekly
 # Tech Stack
 - javascript
 - nodejs
-- mysql
+- mysql(Sequalize)
 - express
 
 # Todo
 [] Adjust Deposit and Withdrawal 
+
 [] Add mailing 
+
 [] Add the forget password routes
 
 [ ] 
