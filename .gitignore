@@ -9,6 +9,8 @@ jspm_packages/
 
 # Logs
 logs
+nEWREADME.md
+nideas.md
 sequalize_command.txt
 logs.txt
 *.log
@@ -17,6 +19,7 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 mysqlstart.txt
+
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
