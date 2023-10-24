@@ -26,7 +26,9 @@ Application is still under developement, new features may be added weekly
 - express
 
 # Todo
-[ ] Switch from using axios in the deposit and withdrawal, to using flutterwave rave package
+[] Adjust Deposit and Withdrawal 
+[] Add mailing 
+[] Add the forget password routes
 
 [ ] 
 # API End Points
