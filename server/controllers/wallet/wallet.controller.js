@@ -12,7 +12,7 @@ const { validationResult } = require("express-validator");
 const catchAsync = require("../../utils/catchasync");
 const BadRequestError = require("../../utils/errors/badrequest.error");
 
-const setWalletPin = catchAsync(async (req, res) => {
+const createWalletPin = catchAsync(async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(httpStatus.BAD_REQUEST).json({ success: false, errors: errors.array() });
@@ -33,7 +33,7 @@ const setWalletPin = catchAsync(async (req, res) => {
   });
 });
 
-const fundWallet = catchAsync(async (req, res) => {
+const createFundWallet = catchAsync(async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(httpStatus.BAD_REQUEST).json({ success: false, errors: errors.array() });
@@ -56,7 +56,7 @@ const fundWallet = catchAsync(async (req, res) => {
   });
 });
 
-const verifyWalletFunding = catchAsync(async (req, res) => {
+const createVerifyWalletFunding = catchAsync(async (req, res) => {
   const { transaction_id, status, tx_ref } = req.query;
 
   if (!transaction_id || !status || !tx_ref) {
@@ -78,7 +78,7 @@ const verifyWalletFunding = catchAsync(async (req, res) => {
   });
 });
 
-const transferFund = catchAsync(async (req, res) => {
+const createTransferFund = catchAsync(async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(httpStatus.BAD_REQUEST).json({ success: false, errors: errors.array() });
@@ -100,7 +100,7 @@ const transferFund = catchAsync(async (req, res) => {
   });
 });
 
-const withdrawFund = catchAsync(async (req, res) => {
+const createWithdrawFund = catchAsync(async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(httpStatus.BAD_REQUEST).json({ success: false, errors: errors.array() });
@@ -123,7 +123,7 @@ const withdrawFund = catchAsync(async (req, res) => {
   });
 });
 
-const getWalletBalance = catchAsync(async (req, res) => {
+const createGetWalletBalance = catchAsync(async (req, res) => {
   const walletData = {
     user: req.user,
   };
@@ -137,7 +137,7 @@ const getWalletBalance = catchAsync(async (req, res) => {
   });
 });
 
-const getBanks = catchAsync(async (req, res) => {
+const createGetBanks = catchAsync(async (req, res) => {
   const banks = await getBanks();
 
   return res.status(httpStatus.OK).send({
@@ -148,11 +148,11 @@ const getBanks = catchAsync(async (req, res) => {
 });
 
 module.exports = {
-  setWalletPin,
-  fundWallet,
-  verifyWalletFunding,
-  transferFund,
-  withdrawFund,
-  getWalletBalance,
-  getBanks,
+  createWalletPin,
+  createFundWallet,
+  createVerifyWalletFunding,
+  createTransferFund,
+  createWithdrawFund,
+  createGetWalletBalance,
+  createGetBanks,
 };

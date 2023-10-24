@@ -62,7 +62,7 @@ const login = catchAsync(async (req, res) => {
   });
 });
 
-const getProfile = catchAsync(async (req, res) => {
+const getProfiles = catchAsync(async (req, res) => {
   const user = await getProfile(req.user);
 
   return res.status(httpStatus.OK).send({
@@ -86,6 +86,6 @@ const getAllusers = catchAsync(async (req, res) => {
 module.exports = {
   register,
   login,
-  getProfile,
+  getProfiles,
   getAllusers,
 };

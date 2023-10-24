@@ -13,7 +13,8 @@ import {
     accept_gift_card,
     reject_gift_card,
 } from '../controllers/card/card.controller';
-const { auth, authAdmin } = require("../middlewares/auth");
+const { auth } = require("../middlewares/auth/auth");
+const {authAdmin} = require("../middlewares/auth/auth-admin");
 const { cardValidation } = require('../validations')
 
 const router = express.Router();

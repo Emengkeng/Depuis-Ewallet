@@ -1,46 +1,47 @@
 const express = require("express");
 const {
-    setWalletPin,
-    fundWallet,
-    transferFund,
-    withdrawFund,
-    getWalletBalance,
-    getBanks,
+    createWalletPin,
+    createFundWallet,
+    createTransferFund,
+    createWithdrawFund,
+    createVerifyWalletFunding,
+    createGetBanks,
+    createGetWalletBalance,
 } = require("../controllers/wallet/wallet.controller");
 const { walletValidation } = require('../validations');
-const { auth } = require("../middlewares/auth/");
-const { setWalletPin } = require("../middlewares/wallet/set-wallet-pin");
+const { auth } = require("../middlewares/auth/auth");
+const { setWalletPins } = require("../middlewares/wallet/set-wallet-pin");
 
 const router = express.Router();
 
 router.post("/wallet/set-pin", 
     [auth, 
     walletValidation.setWalletPin], 
-    setWalletPin);
+    createWalletPin);
 
 router.post("/wallet/fund", 
-    [auth, setWalletPin, 
+    [auth, setWalletPins, 
     walletValidation.fundWallet], 
-    fundWallet);
+    createFundWallet);
 
 router.get("/wallet/verify", 
     [auth], 
-    verifyWalletFunding);
+    createVerifyWalletFunding);
 
 router.post("/wallet/transfer", 
-    [auth, setWalletPin, 
+    [auth, setWalletPins, 
     walletValidation.transferFund], 
-    transferFund);
+    createTransferFund);
 
 router.post("/wallet/withdraw", 
-    [auth, setWalletPin, 
+    [auth, setWalletPins, 
     walletValidation.withdrawFund], 
-    withdrawFund);
+    createWithdrawFund);
 
 router.get("/wallet/balance", 
-    [auth], getWalletBalance);
+    [auth], createGetWalletBalance);
 
 router.get("/wallet/banks", 
-    [auth], getBanks);
+    [auth], createGetBanks);
 
 module.exports = router;

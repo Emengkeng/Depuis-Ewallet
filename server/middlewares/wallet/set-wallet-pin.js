@@ -3,7 +3,7 @@ const httpStatus = require("http-status");
 import model from '../../models';
 
 
-const setWalletPin = async (req, res, next) => {
+const setWalletPins = async (req, res, next) => {
   try {
     const user = req.user;
 
@@ -28,5 +28,5 @@ const setWalletPin = async (req, res, next) => {
 };
 
 module.exports = {
-  setWalletPin,
+  setWalletPins,
 };
