@@ -1,4 +1,5 @@
-const { userService, walletService } = require("../../services");
+const {createWallet} = require("../../services/card/creatcard.service")
+const {createUser, createProfile, findUserByEmail, getProfile} = require("../../services/user/user.service")
 const httpStatus = require("http-status");
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
@@ -13,10 +14,10 @@ const register = catchAsync(async (req, res) => {
   if (!errors.isEmpty()) {
     return res.status(httpStatus.BAD_REQUEST).json({ success: false, errors: errors.array() });
   }
-  const user = await userService.createUser(req.body);
+  const user = await createUser(req.body);
 
-  await walletService.createWallet(user.id);
-  await userService.createProfile(user.id, user.first_name);
+  await createWallet(user.id);
+  await createProfile(user.id, user.first_name);
 
   return res.status(httpStatus.CREATED).send({
     success: true,
@@ -30,7 +31,7 @@ const login = catchAsync(async (req, res) => {
     return res.status(httpStatus.BAD_REQUEST).json({ success: false, errors: errors.array() });
   }
   const { email, password } = req.body;
-  const user = await userService.findUserByEmail(email);
+  const user = await findUserByEmail(email);
 
   if (!user) {
     throw new UnAuthorizedError("Invalid email or password");
@@ -62,7 +63,7 @@ const login = catchAsync(async (req, res) => {
 });
 
 const getProfile = catchAsync(async (req, res) => {
-  const user = await userService.getProfile(req.user);
+  const user = await getProfile(req.user);
 
   return res.status(httpStatus.OK).send({
     success: true,

@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import transporter from '../../middlewares/transporter';
+import transporter from '../../middlewares/mail/transporter';
 import model from '../../models';
 const sendMail = require('../../services');
 

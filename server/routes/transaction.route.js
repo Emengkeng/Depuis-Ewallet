@@ -1,8 +1,8 @@
 const express = require("express");
-const transactionController = require("../controllers/transaction.controller");
+const getTransactions = require("../controllers/transaction/transaction.controller");
 const { auth } = require("../middlewares/auth");
 
 const router = express.Router();
-router.get("/transactions", [auth], transactionController.getTransactions);
+router.get("/transactions", [auth], getTransactions);
 
 module.exports = router;

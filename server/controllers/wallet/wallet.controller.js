@@ -1,4 +1,12 @@
-const { walletService } = require("../../services");
+const {
+  setWalletPin, 
+  fundWallet, 
+  verifyWalletFunding, 
+  transferFund, 
+  withdrawFund, 
+  getWalletBalance, 
+  getBanks
+} = require("../../services/wallet/wallet.service")
 const httpStatus = require("http-status");
 const { validationResult } = require("express-validator");
 const catchAsync = require("../../utils/catchasync");
@@ -17,7 +25,7 @@ const setWalletPin = catchAsync(async (req, res) => {
     user: req.user,
   };
 
-  await walletService.setWalletPin(walletData);
+  await setWalletPin(walletData);
 
   return res.status(httpStatus.CREATED).send({
     success: true,
@@ -39,7 +47,7 @@ const fundWallet = catchAsync(async (req, res) => {
     frontend_base_url,
   };
 
-  const paymentLink = await walletService.fundWallet(walletData);
+  const paymentLink = await fundWallet(walletData);
 
   return res.status(httpStatus.CREATED).send({
     success: true,
@@ -62,7 +70,7 @@ const verifyWalletFunding = catchAsync(async (req, res) => {
     user: req.user,
   };
 
-  await walletService.verifyWalletFunding(walletData);
+  await verifyWalletFunding(walletData);
 
   return res.status(httpStatus.CREATED).send({
     success: true,
@@ -84,7 +92,7 @@ const transferFund = catchAsync(async (req, res) => {
     user: req.user,
   };
 
-  await walletService.transferFund(walletData);
+  await transferFund(walletData);
 
   return res.status(httpStatus.CREATED).send({
     success: true,
@@ -107,7 +115,7 @@ const withdrawFund = catchAsync(async (req, res) => {
     user: req.user,
   };
 
-  await walletService.withdrawFund(walletData);
+  await withdrawFund(walletData);
 
   return res.status(httpStatus.CREATED).send({
     success: true,
@@ -120,7 +128,7 @@ const getWalletBalance = catchAsync(async (req, res) => {
     user: req.user,
   };
 
-  const wallet = await walletService.getWalletBalance(walletData);
+  const wallet = await getWalletBalance(walletData);
 
   return res.status(httpStatus.OK).send({
     success: true,
@@ -130,7 +138,7 @@ const getWalletBalance = catchAsync(async (req, res) => {
 });
 
 const getBanks = catchAsync(async (req, res) => {
-  const banks = walletService.getBanks();
+  const banks = await getBanks();
 
   return res.status(httpStatus.OK).send({
     success: true,
