@@ -1,8 +1,8 @@
-import model from '../models';
+import model from '../../models';
 import creatCard from './creatcard.service'
 const uuid = require('uuid');
-const { checkCard, giveBackUserMoney } = require('./user.service')
-const { sendMail } = require('./')
+const { checkCard, giveBackUserMoney } = require('../user/user.service')
+const { sendMail } = require('..')
 const httpStatus = require("http-status");
 
 /**

@@ -1,4 +1,4 @@
-import transporter from '../middlewares/transporter';
+import transporter from '../middlewares/mail/transporter';
 const httpStatus = require("http-status");
 
 const giftCard = async(email, url, fullName ) => {

@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const httpStatus = require("http-status");
-const jwtConfig = require("../config/jwt");
+const jwtConfig = require("../../config/jwt");
 
 const auth = async (req, res, next) => {
     try {

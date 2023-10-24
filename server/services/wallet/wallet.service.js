@@ -1,14 +1,14 @@
 // const db = require("../config/db");
-import model from '../models';
+import model from '../../models';
 const randomstring = require("randomstring");
 const bcrypt = require("bcryptjs");
-const { makePayment, verifyPayment, withdrawPayment } = require("../helpers/payment.helpers");
+const { makePayment, verifyPayment, withdrawPayment } = require("../../helpers/payment.helpers");
 require("dotenv/config");
-const { findUserByEmail, findWalletByWalletC, findUserById } = require("./user.service");
+const { findUserByEmail, findWalletByWalletC, findUserById } = require("../user/user.service");
 //const banks = require("../helpers/json/banks.json");
-import rave from '../config/flutterwave_init';
-const NotFoundError = require("../utils/errors/notfound.error");
-const BadRequestError = require("../utils/errors/badrequest.error");
+import rave from '../../config/flutterwave_init';
+const NotFoundError = require("../../utils/errors/notfound.error");
+const BadRequestError = require("../../utils/errors/badrequest.error");
 
 /**
  * Create Wallet

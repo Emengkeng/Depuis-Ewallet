@@ -1,6 +1,6 @@
 // import { use } from 'chai';
 const rave = ('../config/flutterwave_init');
-import model from '../models';
+import model from '../../models';
 const httpStatus = require("http-status");
 // import { findUserByEmail, findUserById, getUserBalance } from '../services/user.service';
 

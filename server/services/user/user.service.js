@@ -1,5 +1,5 @@
 // const db = require('../config/db');
-import model from '../models';
+import model from '../../models';
 const bcrypt = require('bcryptjs');
 
 /**

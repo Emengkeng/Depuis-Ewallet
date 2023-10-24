@@ -1,5 +1,5 @@
 //const db = require('../../removed/db');
-import model from '../models';
+import model from '../../models';
 /* 
 * Need to do detail testing to make sure this feature is working correctly
 */

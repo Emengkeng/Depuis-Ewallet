@@ -1,6 +1,6 @@
 const httpStatus = require("http-status");
 // const db = require("../config/db");
-import model from '../models';
+import model from '../../models';
 
 
 const authAdmin = async (req, res, next) => {
