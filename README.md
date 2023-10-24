@@ -26,11 +26,12 @@ Application is still under developement, new features may be added weekly
 - Fund Transfer
 - Withdraw Fund
 - Get Transactions
-- Create to card
+- Create credit card
 - Freeze card
 - Fund Card
 - Get Card Transactions
-- Withdraw from card
+- Gift Card
+- Accept or Reject Gifted Card
 
 # Tech Stack
 - javascript
@@ -39,13 +40,14 @@ Application is still under developement, new features may be added weekly
 - express
 
 # Todo
-[] Switch Deposit and Withdrawal from axios to the Flutterwave Rave Package 
+[ ] Switch Deposit and Withdrawal from axios to the Flutterwave Rave Package 
 
-[] Add mailing 
+[ ] Add mailing 
 
-[] Add the forget password routes
+[ ] Add the forget password routes
 
-[ ] 
+[ ] Withdraw from Card
+
 # API End Points
 ## Users
 ### Register
@@ -256,6 +258,20 @@ npm test
 
 # Author
 Emenkeng Juslen
+
+## Need help?
+
+Feel free to contact me on [LinkedIn](https://www.linkedin.com/in/jussec/) 
+
+```javascript
+
+if (youEnjoyed) {
+    starThisRepository();
+}
+
+```
+
+-----------
 
 # License
 MIT
