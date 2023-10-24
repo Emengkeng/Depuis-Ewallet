@@ -1,4 +1,17 @@
 # Best E-wallet-virtual-card-system
+
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Emengkeng/Depuis-Ewallet?logo=github&style=for-the-badge)](https://github.com/Emengkeng/) 
+[![GitHub last commit](https://img.shields.io/github/last-commit/Emengkeng/Depuis-Ewallet?style=for-the-badge&logo=git)](https://github.com/Emengkeng) 
+[![GitHub stars](https://img.shields.io/github/stars/Emengkeng/Depuis-Ewallet?style=for-the-badge)](https://github.com/Emengkeng/Depuis-Ewallet/stargazers) 
+[![My stars](https://img.shields.io/github/stars/Emengkeng?affiliations=OWNER%2CCOLLABORATOR&style=for-the-badge&label=My%20stars)](https://github.com/Emengkeng/Depuis-Ewallet/stargazers) 
+[![GitHub forks](https://img.shields.io/github/forks/Emengkeng/Depuis-Ewallet?style=for-the-badge&logo=git)](https://github.com/Emengkeng/Depuis-Ewallet/network)
+[![Code size](https://img.shields.io/github/languages/code-size/Emengkeng/Depuis-Ewallet?style=for-the-badge)](https://github.com/Emengkeng/Depuis-Ewallet)
+[![Languages](https://img.shields.io/github/languages/count/Emengkeng/Depuis-Ewallet?style=for-the-badge)](https://github.com/Emengkeng/Depuis-Ewallet)
+[![Top](https://img.shields.io/github/languages/top/Emengkeng/Depuis-Ewallet?style=for-the-badge&label=Top%20Languages)](https://github.com/Emengkeng/Depuis-Ewallet)
+[![Issues](https://img.shields.io/github/issues/Emengkeng/Depuis-Ewallet?style=for-the-badge&label=Issues)](https://github.com/Emengkeng/Depuis-Ewallet)
+[![Watchers](	https://img.shields.io/github/watchers/Emengkeng/Depuis-Ewallet?label=Watch&style=for-the-badge)](https://github.com/Emengkeng/Depuis-Ewallet/) 
+
+
 This system allow users to fund their account, transfer funds and withdraw from their account, and also subscribe to Real virtual credit card
 
 # Note
@@ -26,7 +39,7 @@ Application is still under developement, new features may be added weekly
 - express
 
 # Todo
-[] Adjust Deposit and Withdrawal 
+[] Switch Deposit and Withdrawal from axios to the Flutterwave Rave Package 
 
 [] Add mailing 
 
@@ -186,9 +199,9 @@ This endpoint does the followings
 1. Clone the project from github.
 
 ```
-git clone https://github.com/Emengkeng/virtual-card-and-e-wallet.git
+git clone https://github.com/Emengkeng/Depuis-Ewallet.git
 ```
-git remote add origin https://github.com/Emengkeng/virtual-card-and-e-wallet.git
+git remote add origin https://github.com/Emengkeng/Depuis-Ewallet.git
 ## Using manual download ZIP
 
 1. Download repository
