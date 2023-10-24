@@ -29,7 +29,7 @@ const createCard = async (data, cardType, UserId) => {
                 },
                 });
 
-            if (checkCard.name == 'BASICC' || checkCard.expired == false) {
+            if (checkCard.name == 'BASICC' && checkCard.expired == false) {
                 return res.status(httpStatus.BAD_REQUEST).json({
                     success: false,
                     message: "ALready Subscribed To This Card",
@@ -78,7 +78,7 @@ const createCard = async (data, cardType, UserId) => {
                 },
                 });
 
-            if (ucheckCard.name == 'UNLIMITEDC' || checkCard.expired == false) {
+            if (ucheckCard.name == 'UNLIMITEDC' && checkCard.expired == false) {
                 return res.status(httpStatus.BAD_REQUEST).json({
                     success: false,
                     message: "ALready Subscribed To This Card",
@@ -131,7 +131,7 @@ const createCard = async (data, cardType, UserId) => {
                 },
                 });
 
-            if (fcheckCard.name == 'SHAREDC' || checkCard.expired == false) {
+            if (fcheckCard.name == 'SHAREDC' && checkCard.expired == false) {
                 return res.status(httpStatus.BAD_REQUEST).json({
                     success: false,
                     message: "ALready Subscribed To This Card",
@@ -180,7 +180,7 @@ const createCard = async (data, cardType, UserId) => {
                 },
                 });
 
-            if (tcheckCard.name == 'TRAVELC' || checkCard.expired == false) {
+            if (tcheckCard.name == 'TRAVELC' && checkCard.expired == false) {
                 return res.status(httpStatus.BAD_REQUEST).json({
                     success: false,
                     message: "ALready Subscribed To This Card",

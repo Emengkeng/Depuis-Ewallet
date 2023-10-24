@@ -460,6 +460,13 @@ const gift_card = catchAsync(async (req, res) => {
         })
     }
 
+    if(sender.id == reciever.id){
+        console.log('You can not gift card to yourself')
+        return res.json({
+            message: 'You can not Gift Card to Yourself',
+        })
+    }
+
     // Get User balance 
     const accountDetails = await getUserBalance(UserId);
     const { balance } = accountDetails.dataValues;
@@ -679,6 +686,32 @@ const reject_gift_card = catchAsync(async() => {
         },
     });
 
+});
+
+const get_all_user_gift_card = catchAsync(async (req, res) => {
+    const data = await model.GiftCards.findAll({
+        where: {
+            recipient: req.user.id,
+        }
+    });
+    return res.status(httpStatus.OK).send({
+        success: true,
+        message: 'List of all Card Gifted to you',
+        result: data,
+    });
+})
+
+const get_all_card_user_has_gifted = catchAsync(async (req, res) => {
+    const data = await model.GiftCards.findAll({
+        where: {
+            UserId: req.user.id,
+        }
+    });
+    return res.status(httpStatus.OK).send({
+        success: true,
+        message: 'List of all Card You have Gifted',
+        result: data,
+    });
 })
 
 module.exports = {
@@ -693,4 +726,6 @@ module.exports = {
     create_Vcard,
     accept_gift_card,
     reject_gift_card,
+    get_all_user_gift_card,
+    get_all_card_user_has_gifted,
 }
